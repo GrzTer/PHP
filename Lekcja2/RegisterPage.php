@@ -11,7 +11,7 @@
 <body>
     <div class="registration-container">
         <h1>Rejestracja</h1>
-        <form action="ProcessRegister.php" method="post">
+        <form action="ProcessRegister.php" method="post" novalidate>
             <label for="name">Imię</label>
             <input type="text" id="name" name="name" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
             <div class="error-message" id="name-error"></div>

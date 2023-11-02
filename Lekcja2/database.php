@@ -6,8 +6,8 @@ $password = "";
 
 $mysqli = new mysqli(hostname: $host, username: $user, password: $password, database: $dbname);
 
-if ($mysqli->connect_error) {
-    die("Connection failed: ". $mysqli->connect_error);
+if ($mysqli->connect_errno) {
+    die("Connection failed: " . $mysqli->connect_error);
 }
 
 return $mysqli;
