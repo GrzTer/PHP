@@ -59,6 +59,21 @@ header ul li:hover {
   border-image-slice: 1;
 }
 
+a {
+  color: #282828;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+  background-color: #F9F871;
+}
+a:hover {
+  background-color: #282828;
+  color: white;
+}
+
 .underheader {
   background-image: url("header-image.jpg");
   background-attachment: fixed;

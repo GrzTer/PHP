@@ -41,13 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
-    <h1>Login</h1>
+    <div class="registration-container">
+    <h1 class="log">Login</h1>
     
     <?php if ($is_invalid): ?>
         <em>Invalid login</em>
     <?php endif; ?>
-    
+    <div class="form">
     <form method="post">
         <label for="email">email</label>
         <input type="email" name="email" id="email"
@@ -56,8 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
         
-        <button>Log in</button>
+        <button class="log" type="submit">Log in</button>
     </form>
-    
+    </div>
+    </div>
 </body>
 </html>

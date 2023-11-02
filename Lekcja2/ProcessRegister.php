@@ -25,7 +25,7 @@ if ( ! $stmt->prepare($sql)) {
 $stmt->bind_param("sss", $_POST["name"], $_POST["email"], $password_hash);
 
 if ($stmt->execute()) {
-    header("Location: signup-success.html");
+    header("Location: login.php");
     exit;
 }   else {
     

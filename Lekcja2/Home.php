@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 <body>
 <header>
         <div class="header_container">
-            <h4>Strona Główna</h4>
+            <h4>Grzegorz Tereszkiewicz</h4>
                 <ul>
                     <li><a href="Home.php">Strona Główna</a></li>
                     <li><a href="#about-me">O Mnie</a></li>
@@ -43,6 +43,7 @@ if (isset($_SESSION["user_id"])) {
 
     <div class="underheader">
         <h1>Witaj na Moim Portfolio</h1>
+        <!-- Jak tu wypisać zalogowaną osobę [imię] -->
         <p>Tutaj znajdziesz informacje o mnie i moich projektach.</p>
     </div>
 

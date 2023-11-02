@@ -57,6 +57,10 @@ header {
   
 }
 
+a {
+  @include button-styles;
+  background-color: $yellow;
+}
 
   
 .underheader {
