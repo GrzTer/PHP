@@ -6,7 +6,7 @@ $mysqli = require __DIR__. "/database.php";
 
 $sql = "INSERT INTO user (name, email, password_hash) VALUES (?, ?, ?)";
 
-$stmt = stmt_init();
+$stmt = $mysqli->stmt_init();
 
 if ( ! $stmt->prepare($sql)) {
     die("Sql failed: ". $mysqli->error);
