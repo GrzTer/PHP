@@ -4,7 +4,7 @@ $dbname = "login_db";
 $user = "root";
 $password = "";
 
-$mysqli = new mysqli(hostname: $host, username: $user, password: $password, database: $dbname);
+$mysqli = new mysqli($host, $user, $password, $dbname);
 
 if ($mysqli->connect_errno) {
     die("Connection failed: " . $mysqli->connect_error);

@@ -1,27 +1,12 @@
 <?php
-
 session_start();
-
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    echo $user["name"];
-}
-
+$welcome_message = "Welcome, " . $_SESSION["user_name"] . "!";
 ?>
 
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="icon" href="styles/favico.ico">
@@ -36,15 +21,19 @@ if (isset($_SESSION["user_id"])) {
                     <li><a href="#about-me">O Mnie</a></li>
                     <li><a href="#projects">Projekty</a></li>
                     <li><a href="#contact-me">Kontakt</a></li>
-                    <li><a href="Login.php">Zaloguj się</a></li>
+                    <?php if (isset($user)): ?>
+                        <li><a href="logout.php">Wyloguj się</a></li>
+                    <?php else:?>
+                    <li><a href="login.php">Zaloguj się</a></li>
                     <li><a href="RegisterPage.php">Zarejestruj się</a></li>
+                    <?php endif;?>
                 </ul>
         </div>
     </header>
 
     <div class="underheader">
         <h1>Witaj na Moim Portfolio</h1>
-        <!-- Jak tu wypisać zalogowaną osobę [imię] -->
+        <h1><?php echo $welcome_message; ?></h1>
         <p>Tutaj znajdziesz informacje o mnie i moich projektach.</p>
     </div>
 

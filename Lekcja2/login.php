@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             header("Location: Home.php");
             exit;
-            
         }
     }
     
@@ -56,10 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         <label for="password">Password</label>
         <input type="password" name="password" id="password" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
-        
-        <button class="log" type="submit">Log in</button>
+        </div>
+        <button type="submit">Log in</button>
     </form>
-    </div>
+
+    <form action="RegisterPage.php" method="post">
+        <h1 class="reg">Registration</h1>
+        <button type="submit">Zarejestruj się</button>
+    </form>
     </div>
 </body>
 </html>
