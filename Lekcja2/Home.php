@@ -1,5 +1,6 @@
 <?php
 session_start();
+$mysqli = require __DIR__ . "/database.php";
 $welcome_message = "Welcome, " . $_SESSION["user_name"] . "!";
 ?>
 
@@ -24,8 +25,8 @@ $welcome_message = "Welcome, " . $_SESSION["user_name"] . "!";
                     <?php if (isset($user)): ?>
                         <li><a href="logout.php">Wyloguj się</a></li>
                     <?php else:?>
-                    <li><a href="login.php">Zaloguj się</a></li>
-                    <li><a href="RegisterPage.php">Zarejestruj się</a></li>
+                        <li><a href="login.php">Zaloguj się</a></li>
+                        <li><a href="RegisterPage.php">Zarejestruj się</a></li>
                     <?php endif;?>
                 </ul>
         </div>
