@@ -1,0 +1,15 @@
+.banner {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f2f2f2;
+  }
+  
+  .banner h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .banner p {
+    font-size: 1.2rem;
+    color: #666;
+  }

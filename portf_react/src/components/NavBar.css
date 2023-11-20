@@ -1,13 +1,75 @@
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: black;
+  position: relative;
+  transition: background-color 0.3s ease;
+  background: transparent;
+  text-decoration:none;
+
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #222;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 1rem;
+  cursor: pointer;
+  /* color: white; */
+  text-decoration:none;
+
+}
+
+.nav-links li:hover {
+  text-decoration:none;
+}
+
+.auth-options {
+  display: flex;
+  align-items: center;
+}
+
+.auth-options button {
+  margin-right: 1rem;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .NavBar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
+
+  .nav-links,
+  .auth-options {
+    margin-top: 1rem;
   }
-  
+
+  .auth-options button {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

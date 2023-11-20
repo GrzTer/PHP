@@ -1,0 +1,22 @@
+.contact {
+    padding: 2rem;
+  }
+  
+  .contact h2 {
+    font-size: 1.8rem;
+
+  }
+  
+  .contact p {
+    margin-bottom: 1rem;
+  }
+  
+  .contact ul {
+    list-style:circle;
+    display: flex;
+  }
+  
+  .contact li {
+    margin-bottom: 0.5rem;
+    padding: 2rem;
+  }
