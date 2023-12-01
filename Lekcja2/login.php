@@ -1,5 +1,4 @@
 <?php
-
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -22,17 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             session_regenerate_id();
             
-            $_SESSION["user_id"] = $user["id"];
             $_SESSION["user_name"] = $user["name"];
 
-            header("Location: Home.php");
+            header("Location: home.php");
             exit;
         }
     }
     
     $is_invalid = true;
 }
-
 ?>
 <!DOCTYPE html>
 <html>

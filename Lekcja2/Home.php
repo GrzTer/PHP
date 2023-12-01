@@ -1,19 +1,5 @@
 <?php
-
 session_start();
-
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -29,24 +15,26 @@ if (isset($_SESSION["user_id"])) {
 <header>
         <div class="header_container">
             <h4>Grzegorz Tereszkiewicz</h4>
-                <ul>
-                    <li><a href="Home.php">Strona Główna</a></li>
-                    <li><a href="#about-me">O Mnie</a></li>
-                    <li><a href="#projects">Projekty</a></li>
-                    <li><a href="#contact-me">Kontakt</a></li>
-                    <?php if (isset($user)): ?>
-                        <li><a href="logout.php">Wyloguj się</a></li>
-                    <?php else:?>
+            <ul>
+                <li><a href="home.php">Strona Główna</a></li>
+                <li><a href="sklep.php">Sklep</a></li>
+                <li><a href="#about-me">O Mnie</a></li>
+                <li><a href="#projects">Projekty</a></li>
+                <li><a href="#contact-me">Kontakt</a></li>
+                <?php if (isset($_SESSION["user_name"])): ?>
+                    <li><a href="logout.php">Wyloguj się</a></li>
+                <?php else: ?>
                     <li><a href="login.php">Zaloguj się</a></li>
                     <li><a href="RegisterPage.php">Zarejestruj się</a></li>
-                    <?php endif;?>
-                </ul>
+                <?php endif; ?>
+            </ul>
         </div>
     </header>
 
     <div class="underheader">
         <h1>Witaj na Moim Portfolio</h1>
-        <h2> <?php echo "Witaj, ". $_SESSION["user_name"];?> </h2>
+        <h2><?php if (isset($_SESSION["user_name"]))
+            echo "Witaj, " . $_SESSION["user_name"]; ?></h2>
         <p>Tutaj znajdziesz informacje o mnie i moich projektach.</p>
     </div>
 

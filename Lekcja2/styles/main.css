@@ -277,4 +277,47 @@ footer {
      border-image: initial;
   background: linear-gradient(to right, #2A272A, #A3CFCD);
   box-shadow: 0 0 10px #F9F871;
+}
+
+.Sklep_body {
+  background-image: url("1403496.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 0.063rem solid #F9F871;
+}
+.Sklep_body .Sklep {
+  display: flex;
+}
+.Sklep_body .Sklep .Filtr {
+  background: #A3CFCD;
+  -o-border-image: initial;
+     border-image: initial;
+  background: linear-gradient(to right, #282828, #A3CFCD);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px #F9F871;
+  width: 400px;
+  height: 60vh;
+  text-align: center;
+}
+.Sklep_body .Sklep .Products {
+  background: #A3CFCD;
+  -o-border-image: initial;
+     border-image: initial;
+  background: linear-gradient(to right, #282828, #A3CFCD);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px #F9F871;
+  width: 60vw;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
