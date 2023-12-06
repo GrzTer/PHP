@@ -90,22 +90,30 @@ a {
 }
 
 #about-me {
-  padding: 20px;
-  margin: 50px;
-  padding-top: 10vh;
+  padding: 4vh;
+  margin: 7vh;
+  padding-top: 5.7vh;
   height: 90vh;
+  display: block;
+  text-align: center;
+
+  
+  h2{
+    font-size: $font-size-3;
+    color: $yellow;
+    text-align: center;
+  }
 
   p {
     font-size: $font-size-1;
     font-family: $lato;
-    width: 100vh;
     float: left;
     padding-right: 7px;
-    
+    display: flex;
   }
 
   img {
-    margin-left: 50px;
+    margin-left: 5vw;
     height: 58vh;
     width: 30vw;
   }
@@ -289,6 +297,8 @@ footer {
   border-bottom: 0.063rem solid $yellow;
 .Sklep {
   display: flex;
+  justify-content: center;
+  // align-items: center;
   
   .Filtr {
     background: $GR1;
@@ -299,7 +309,7 @@ footer {
     margin: 20px;
     box-shadow: 0 0 10px $yellow;
     width: 400px;
-    height: 60vh;
+    height: 70vh;
     text-align: center;
   }
 
@@ -315,4 +325,17 @@ footer {
     text-align: center;
   }
 }
+}
+
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, $background-color, $GR1);
 }

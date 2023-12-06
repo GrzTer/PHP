@@ -97,21 +97,28 @@ a:hover {
 }
 
 #about-me {
-  padding: 20px;
-  margin: 50px;
-  padding-top: 10vh;
+  padding: 4vh;
+  margin: 7vh;
+  padding-top: 5.7vh;
   height: 90vh;
+  display: block;
+  text-align: center;
   border-bottom: 0.063rem solid #F9F871;
+}
+#about-me h2 {
+  font-size: 4rem;
+  color: #F9F871;
+  text-align: center;
 }
 #about-me p {
   font-size: 1.3rem;
   font-family: "Lato", sans-serif;
-  width: 100vh;
   float: left;
   padding-right: 7px;
+  display: flex;
 }
 #about-me img {
-  margin-left: 50px;
+  margin-left: 5vw;
   height: 58vh;
   width: 30vw;
 }
@@ -295,6 +302,7 @@ footer {
 }
 .Sklep_body .Sklep {
   display: flex;
+  justify-content: center;
 }
 .Sklep_body .Sklep .Filtr {
   background: #A3CFCD;
@@ -306,7 +314,7 @@ footer {
   margin: 20px;
   box-shadow: 0 0 10px #F9F871;
   width: 400px;
-  height: 60vh;
+  height: 70vh;
   text-align: center;
 }
 .Sklep_body .Sklep .Products {
@@ -320,4 +328,16 @@ footer {
   box-shadow: 0 0 10px #F9F871;
   width: 60vw;
   text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #282828, #A3CFCD);
 }/*# sourceMappingURL=main.css.map */

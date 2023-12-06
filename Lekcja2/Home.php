@@ -17,7 +17,7 @@ session_start();
             <h4>Grzegorz Tereszkiewicz</h4>
             <ul>
                 <li><a href="home.php">Strona Główna</a></li>
-                <li><a href="sklep.php">Sklep</a></li>
+                <li><a href="shop.php">Sklep</a></li>
                 <li><a href="#about-me">O Mnie</a></li>
                 <li><a href="#projects">Projekty</a></li>
                 <li><a href="#contact-me">Kontakt</a></li>
@@ -40,12 +40,15 @@ session_start();
 
     <section id="about-me">
         <h2>O Mnie</h2>
-        <p>Cześć, jestem Grzegorz Tereszkiewicz z ponad [Liczba Lat] lat doświadczenia w branży.<br><br>
-            Uzyskałem stopień [Stopień] na [Uniwersytet/Uczelnia] i od tego czasu osiągnąłem wiele sukcesów zawodowych, w tym [Sukces Zawodowy 1], [Sukces Zawodowy 2] i [Sukces Zawodowy 3].<br><br>
-            Moje obszary ekspertyzy obejmują [Ekspertyza 1], [Ekspertyza 2] i [Ekspertyza 3]. Poza pracą, pasjonuję się [Hobby/Zainteresowanie 1], [Hobby/Zainteresowanie 2] i [Hobby/Zainteresowanie 3]. Mnie motywuje [Co Cię Motywuje] i zawsze dążę do [Czego Dążysz].<br><br>
-            To, co mnie wyróżnia w mojej dziedzinie, to [Co Cię Wyróżnia]. Dla wszystkich rozpoczynających pracę w tej branży, moją radą jest [Twoja Rada]. Patrząc w przyszłość, moje cele i aspiracje to [Cel na Przyszłość 1], [Cel na Przyszłość 2] i [Cel na Przyszłość 3].<br><br>
-            Jestem podekscytowany ciągłym rozwojem i nauką w swojej dziedzinie oraz zawsze szukam nowych wyzwań i okazji, aby wpłynąć pozytywnie na otoczenie.</p>
-        <img src="./styles/[removal.ai]_tmp-64198bbda4618.png"/>
+        <p>scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae 
+            nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem 
+            sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend mi in nulla posuere 
+            sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum mattis pellentesque 
+            id nibh tortor id aliquet lectus proin nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi 
+            tristique senectus et netus et malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis 
+            hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus 
+            et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit</p>
+        <!-- <img src="./styles/[removal.ai]_tmp-64198bbda4618.png"/> -->
     </section>
 
     <section id="projects">
