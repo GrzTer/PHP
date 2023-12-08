@@ -339,3 +339,18 @@ footer {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to right, $background-color, $GR1);
 }
+
+
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: $yellow;
+}

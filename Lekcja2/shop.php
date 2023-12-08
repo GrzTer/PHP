@@ -1,41 +1,19 @@
-<!-- <?php
-session_start();
-$mysqli = require_once 'databaseShop.php';
+<?php
 
+$mysqli = require __DIR__ . "/databaseShop.php";
 
-$categories = [];
-$result = $mysqli->query("SELECT * FROM product_1");
-while ($row = $result->fetch_assoc()) {
-    $categories[] = $row;
+$result1 = $mysqli->query("SELECT id, name FROM product_1");
+
+$result2 = $mysqli->query("SELECT product_1_Id, name FROM product_2");
+
+$result3 = $mysqli->query("SELECT product_2_Id, name FROM product_3");
+
+$result4 = $mysqli->query("SELECT product_3_Id, name FROM product_4");
+
+if (!$result1) {
+    die("Query failed: " . $mysqli->error);
 }
-
-
-$filter = isset($_GET['category']) ? $_GET['category'] : null;
-$products = [];
-
-if ($filter) {
-    $stmt = $mysqli->prepare("SELECT p4.* FROM product_4 p4
-                             INNER JOIN product_3 p3 ON p4.product_3_Id = p3.Id
-                             INNER JOIN product_2 p2 ON p3.product_2_Id = p2.Id
-                             WHERE p2.product_1_Id = ?");
-    $stmt->bind_param("i", $filter);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    while ($row = $result->fetch_assoc()) {
-        $products[] = $row;
-    }
-
-    $stmt->close();
-} else {
-    $result = $mysqli->query("SELECT * FROM product_4");
-    while ($row = $result->fetch_assoc()) {
-        $products[] = $row;
-    }
-}
-
-?> -->
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,26 +42,27 @@ if ($filter) {
 <div class="Sklep_body">
     <main class="Sklep">
     <div class="Filtr">
-        <h1>Product Filter</h1>
-        <div>
-            <label for="category-filter">Filter by Category:</label>
-            <select id="category-filter" onchange="filterProducts()">
-                <option value="">All Categories</option>
-                <?php foreach ($allCategories as $category): ?>
-                    <option value="<?= $category ?>" <?= $filter == $category ? 'selected' : '' ?>>
-                        <?= $category ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+        <h1>Filter Kategorii</h1> 
+        <select class="custom-select" style="width:400px;" onchange="fetchProducts(2, this.value)">
+            <option>Select Category</option>
+            <?php while ($row = mysqli_fetch_assoc($result1)): ?>
+                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+            <?php endwhile; ?>
+        </select>
+            <div id="layer2"></div>
+            <div id="layer3"></div>
     </div>
     <div class="Products">
         <h1>Produkty</h1>
+        <div class="Products">
+            
+        </div>
     </div>
 </main>
 </div>
     <footer>
     <p>Prawa autorskie © Grzegorz Tereszkiewicz</p>
     </footer>
+    <script src="scripts/filter.js"></script>
 </body>
 </html>
