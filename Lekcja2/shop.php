@@ -43,7 +43,7 @@ if (!$result1) {
     <main class="Sklep">
     <div class="Filtr">
         <h1>Filter Kategorii</h1> 
-        <select class="custom-select" style="width:400px;" onchange="fetchProducts(2, this.value)">
+        <select class="custom-select" style="width:200px;" onchange="fetchProducts(2, this.value)">
             <option>Select Category</option>
             <?php while ($row = mysqli_fetch_assoc($result1)): ?>
                 <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
