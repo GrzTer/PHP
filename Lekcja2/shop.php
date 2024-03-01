@@ -1,18 +1,24 @@
 <?php
 
-$mysqli = require __DIR__ . "/databaseShop.php";
+require_once "MainClass.php";
+$main = new MainClass();
 
-$result1 = $mysqli->query("SELECT id, name FROM product_1");
+$connection = $main -> dbConnect();
+$main -> blockEntrance("login.php");
 
-$result2 = $mysqli->query("SELECT product_1_Id, name FROM product_2");
 
-$result3 = $mysqli->query("SELECT product_2_Id, name FROM product_3");
+$result1 = $connection->query("SELECT id, name FROM product_1");
 
-$result4 = $mysqli->query("SELECT product_3_Id, name FROM product_4");
+$result2 = $connection->query("SELECT product_1_Id, name FROM product_2");
+
+$result3 = $connection->query("SELECT product_2_Id, name FROM product_3");
+
+$result4 = $connection->query("SELECT product_3_Id, name FROM product_4");
 
 if (!$result1) {
-    die("Query failed: " . $mysqli->error);
+    die("Query failed: " . $connection->error);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
