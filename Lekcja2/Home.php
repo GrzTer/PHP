@@ -1,16 +1,13 @@
 <?php
-session_start();
+    require_once "MainClass.php";
+    session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="icon" href="styles/favico.ico">
-    <title>Strona Główna</title>
-</head>
+<?php
+    MainClass::printHead("Strona Główna");
+?>
 <body>
 <header>
         <div class="header_container">

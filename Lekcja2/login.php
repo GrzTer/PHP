@@ -4,8 +4,7 @@ $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     require_once "MainClass.php";
-    $main = new MainClass();
-    $connection = $main -> dbConnect();
+    $connection = MainClass::dbConnect();
 
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",

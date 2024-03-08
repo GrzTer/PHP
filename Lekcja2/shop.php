@@ -1,10 +1,8 @@
 <?php
 
 require_once "MainClass.php";
-$main = new MainClass();
-
-$connection = $main -> dbConnect();
-$main -> blockEntrance("login.php");
+$connection = MainClass::dbConnect();
+$connection -> blockEntrance("login.php");
 
 
 $result1 = $connection->query("SELECT id, name FROM product_1");
