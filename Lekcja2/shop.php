@@ -1,8 +1,9 @@
 <?php
 
-require_once "MainClass.php";
+require_once 'MainClass.php';
+require_once 'LayoutClass.php';
 $connection = MainClass::dbConnect();
-$connection -> blockEntrance("login.php");
+$connection -> blockEntrance('login.php');
 
 
 $result1 = $connection->query("SELECT id, name FROM product_1");
@@ -20,29 +21,13 @@ if (!$result1) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="icon" href="styles/favico.ico">
-    <title>Sklep</title>
-</head>
+<?php
+    MainClass::printHead("Sklep");
+?>
 <body>
-<header>
-    <div class="header_container">
-        <h4>Grzegorz Tereszkiewicz</h4>
-        <ul>
-            <li><a href="home.php">Strona Główna</a></li>
-            <li><a href="shop.php">Sklep</a></li>
-            <?php if (isset($_SESSION["user_name"])): ?>
-                <li><a href="logout.php">Wyloguj się</a></li>
-            <?php else: ?>
-                <li><a href="login.php">Zaloguj się</a></li>
-                <li><a href="RegisterPage.php">Zarejestruj się</a></li>
-            <?php endif; ?>
-        </ul>
-    </div>
-</header>
+<?php
+        LayoutClass::printHeader();
+    ?>
 <div class="Sklep_body">
     <main class="Sklep">
     <div class="Filtr">
@@ -64,9 +49,9 @@ if (!$result1) {
     </div>
 </main>
 </div>
-    <footer>
-    <p>Prawa autorskie © Grzegorz Tereszkiewicz</p>
-    </footer>
+<?php
+        MainClass::printFoot()
+    ?>
     <script src="scripts/filter.js"></script>
 </body>
 </html>

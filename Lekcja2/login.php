@@ -1,9 +1,8 @@
 <?php
 $is_invalid = false;
-
+require_once "MainClass.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-    require_once "MainClass.php";
+
     $connection = MainClass::dbConnect();
 
     $sql = sprintf("SELECT * FROM user
@@ -34,11 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/style.css">
-</head>
+<?php
+    MainClass::printHead("Login", './styles/style.css');
+?>
 <body>
     <div class="registration-container">
     <h1 class="log">Login</h1>
