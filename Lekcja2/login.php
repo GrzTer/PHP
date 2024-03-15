@@ -33,32 +33,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-<?php
-    MainClass::printHead("Login", './styles/style.css');
-?>
-<body>
-    <div class="registration-container">
-    <h1 class="log">Login</h1>
-    
-    <?php if ($is_invalid): ?>
-        <em>Invalid login</em>
-    <?php endif; ?>
-    <div class="form">
-    <form method="post">
-        <label for="email">email</label>
-        <input type="email" name="email" id="email"
-               value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
+    <head>
+        <?php
+            MainClass::printHead("Login", './styles/style.css');
+        ?>
+    </head>
+    <body>
+        <div class="registration-container">
+        <h1 class="log">Login</h1>
         
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
-        </div>
-        <button type="submit">Log in</button>
-    </form>
+        <?php if ($is_invalid): ?>
+            <em>Invalid login</em>
+        <?php endif; ?>
+        <div class="form">
+            <form method="post">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email"
+                    value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
+                </div>
+                <button type="submit">Log in</button>
+            </form>
 
-    <form action="RegisterPage.php" method="post">
-        <h1 class="reg">Registration</h1>
-        <button type="submit">Zarejestruj się</button>
-    </form>
-    </div>
-</body>
+            <form action="RegisterPage.php" method="post">
+                <h1 class="reg">Registration</h1>
+                <button type="submit">Zarejestruj się</button>
+            </form>
+        </div>
+    </body>
 </html>

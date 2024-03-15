@@ -21,37 +21,43 @@ if (!$result1) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    MainClass::printHead("Sklep");
-?>
-<body>
-<?php
-        LayoutClass::printHeader();
-    ?>
-<div class="Sklep_body">
-    <main class="Sklep">
-    <div class="Filtr">
-        <h1>Filter Kategorii</h1> 
-        <select class="custom-select" style="width:200px;" onchange="fetchProducts(2, this.value)">
-            <option>Select Category</option>
-            <?php while ($row = mysqli_fetch_assoc($result1)): ?>
-                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-            <?php endwhile; ?>
-        </select>
-            <div id="layer2"></div>
-            <div id="layer3"></div>
-    </div>
-    <div class="Products">
-        <h1>Produkty</h1>
-        <div class="Products">
-            
+    <head>
+        <?php
+            MainClass::printHead("Sklep");
+        ?>
+    </head>
+    <body>
+        <header>
+            <?php
+                LayoutClass::printHeader();
+            ?>
+        </header>
+        <div class="Sklep_body">
+            <main class="Sklep">
+            <div class="Filtr">
+                <h1>Filter Kategorii</h1> 
+                <select class="custom-select" style="width:200px;" onchange="fetchProducts(2, this.value)">
+                    <option>Select Category</option>
+                    <?php while ($row = mysqli_fetch_assoc($result1)): ?>
+                        <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+                    <div id="layer2"></div>
+                    <div id="layer3"></div>
+            </div>
+            <div class="Products">
+                <h1>Produkty</h1>
+                <div class="Products">
+                    
+                </div>
+            </div>
+            </main>
         </div>
-    </div>
-</main>
-</div>
-<?php
-        MainClass::printFoot()
-    ?>
+        <footer>
+            <?php
+                MainClass::printFoot()
+            ?>
+        </footer>
     <script src="scripts/filter.js"></script>
-</body>
+    </body>
 </html>

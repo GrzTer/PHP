@@ -14,7 +14,6 @@ class LayoutClass {
 
 
         echo "
-            <header>
                 <div class='header_container'>
                     <h4>Grzegorz Tereszkiewicz</h4>
                     <ul>
@@ -26,7 +25,7 @@ class LayoutClass {
                         $conditionalRender
                     </ul>
                 </div>
-            </header>";
+            ";
     }
 }
 ?>

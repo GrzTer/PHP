@@ -3,10 +3,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-    MainClass::printHead("Register", './styles/style.css')
-?>
+<head>
+    <?php
+        MainClass::printHead("Register", './styles/style.css')
+    ?>
+</head>
 
 <body>
     <div class="registration-container">
