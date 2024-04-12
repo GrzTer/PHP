@@ -6,6 +6,11 @@ class MainClass
         return $dbConnection = require __DIR__ . '/database.php';
     }
 
+    static function dbConnectShop()
+    {
+        return $dbConnection = require __DIR__ . '/databaseShop.php';
+    }
+
     static function blockEntrance($move_to = 'login.php')
     {
         if (!isset($_SESSION['user_name'])) {
