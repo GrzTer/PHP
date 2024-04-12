@@ -58,6 +58,50 @@ class LayoutClass {
                     'category'=>array()
                 );
             }
+
+            if(!isset(
+            $menu
+            [$row['one_id']]
+            ['category']
+            [$row['two_id']]
+            )) {
+                $menu[$row['one_id']]['category'][$row['two_id']] = array(
+                    'Id'=>$row['two_id'],
+                    'name'=>$row['two_name'],
+                    'subcategory'=>array()
+                );
+            }    
+
+            if(!isset(
+            $menu
+            [$row['one_id']]
+            ['category']
+            [$row['two_id']]
+            ['subcategory']
+            [$row['three_id']]
+            )) {
+                $menu[$row['one_id']]['category'][$row['two_id']]['subcategory'][$row['three_id']] = array(
+                    'Id'=>$row['three_id'],
+                    'name'=>$row['three_name'],
+                    'subsubcategory'=>array()
+                );
+            }    
+
+            if(!isset(
+            $menu
+            [$row['one_id']]
+            ['category']
+            [$row['two_id']]
+            ['subcategory']
+            [$row['three_id']]
+            ['subsubcategory']
+            [$row['four_id']]
+            )) {
+                $menu[$row['one_id']]['category'][$row['two_id']]['subcategory'][$row['three_id']]['subsubcategory'][$row['four_id']] = array(
+                    'Id'=>$row['four_id'],
+                    'name'=>$row['four_name']
+                );
+            }
         }
     }
 }
