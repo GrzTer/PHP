@@ -103,5 +103,61 @@ class LayoutClass {
                 );
             }
         }
+
+        echo '<aside class="products_menu"';
+        echo '<ul>';
+
+        foreach ($menu as $id1 => $level1) {
+            ?>
+                <li>
+                    <a href="shop.php?level1=<?=$id1?>">
+                        <?=$level1['name']?>
+                    </a>
+                    <ul>
+                        <?php
+                            foreach ($level1['category'] as $id2 => $level2) {
+                                ?>
+                                    <li>
+                                        <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>">
+                                            <?=$level2['name']?>
+                                        </a>
+                                        <ul>
+                                            <?php
+                                                foreach ($level2['subcategory'] as $id3 => $level3) {
+                                                    ?>
+                                                        <li>
+                                                            <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>&level3=<?=$id3?>">
+                                                                <?=$level3['name']?>
+                                                            </a>
+                                                        </li>
+                                                        <ul>
+                                                            <?php
+                                                                foreach ($level3['subsubcategory'] as $id4 => $level4) {
+                                                                    ?>
+                                                                        <li>
+                                                                            <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>&level3=<?=$id3?>&level4=<?=$id4?>">
+                                                                                <?=$level4['name']?>
+                                                                            </a>
+                                                                        </li>
+                                                                    <?php
+                                                                }
+                                                            ?>
+                                                        </ul>
+                                                    <?php
+                                                }
+                                            ?>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
+                    </ul>
+                </li>
+            <?php
+        }
+
+        echo '</ul>';
+        echo '</aside>';
+
     }
 }

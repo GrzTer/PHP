@@ -311,6 +311,7 @@ footer {
     width: 400px;
     height: 70vh;
     text-align: center;
+    overflow-y: auto;
   }
 
   .Products {
@@ -353,4 +354,54 @@ footer {
 
 .select-selected {
   background-color: $yellow;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+aside.products_menu {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+aside.products_menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside.products_menu a {
+  color: #5e5e5e;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+aside.products_menu a:hover {
+  background-color: #e9ecef;
+  color: #1a1a1a;
+}
+
+aside.products_menu ul ul {
+  padding-left: 20px;
+}
+
+aside.products_menu ul ul a {
+  border-left: 3px solid #ff9871;
+  padding-left: 7px;
+}
+
+aside.products_menu ul ul ul a {
+  border-left: 3px solid #ffc0a0;
+  padding-left: 14px;
 }

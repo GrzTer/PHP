@@ -25,12 +25,14 @@ MainClass::blockEntrance("login.php");
         <main class="Sklep">
             <div class="Filtr">
                 <h1>Filter Kategorii</h1>
-                <select class="custom-select" style="width:200px;" onchange="fetchProducts(2, this.value)">
-                    <option>Select Category</option>
-                        
-                </select>
-                <div id="layer2"></div>
-                <div id="layer3"></div>
+                <div>
+                    
+                    <?php
+                    LayoutClass::printMenu();
+                    ?>
+                </div>
+                <!-- <div id="layer2"></div>
+                <div id="layer3"></div> -->
             </div>
             <div class="Products">
                 <h1>Produkty</h1>
