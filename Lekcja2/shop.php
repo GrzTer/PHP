@@ -18,7 +18,7 @@ MainClass::blockEntrance("login.php");
 <body>
     <header>
         <?php
-        LayoutClass::printHeader();
+        LayoutClass::printHeader("Sklep internetowy");
         ?>
     </header>
     <div class="Sklep_body">
@@ -26,27 +26,28 @@ MainClass::blockEntrance("login.php");
             <div class="Filtr">
                 <h1>Filter Kategorii</h1>
                 <div>
-                    
+
                     <?php
                     LayoutClass::printMenu();
                     ?>
                 </div>
-                <!-- <div id="layer2"></div>
-                <div id="layer3"></div> -->
+
+
             </div>
-            <div class="Products">
+            <div class="products_container">
                 <h1>Produkty</h1>
-                
+                <?php LayoutClass::getProducts();?>
+
             </div>
 
         </main>
 
     </div>
     <footer>
-            <?php
+        <?php
             MainClass::printFoot()
             ?>
-        </footer>
+    </footer>
     <script src="scripts/filter.js"></script>
 </body>
 

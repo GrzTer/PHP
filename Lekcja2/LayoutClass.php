@@ -85,22 +85,6 @@ class LayoutClass {
                     'name'=>$row['three_name'],
                     'subsubcategory'=>array()
                 );
-            }    
-
-            if(!isset(
-            $menu
-            [$row['one_id']]
-            ['category']
-            [$row['two_id']]
-            ['subcategory']
-            [$row['three_id']]
-            ['subsubcategory']
-            [$row['four_id']]
-            )) {
-                $menu[$row['one_id']]['category'][$row['two_id']]['subcategory'][$row['three_id']]['subsubcategory'][$row['four_id']] = array(
-                    'Id'=>$row['four_id'],
-                    'name'=>$row['four_name']
-                );
             }
         }
 
@@ -109,55 +93,72 @@ class LayoutClass {
 
         foreach ($menu as $id1 => $level1) {
             ?>
-                <li>
-                    <a href="shop.php?level1=<?=$id1?>">
-                        <?=$level1['name']?>
-                    </a>
-                    <ul>
-                        <?php
+<li>
+    <a href="shop.php?level1=<?=$id1?>">
+        <?=$level1['name']?>
+    </a>
+    <ul>
+        <?php
                             foreach ($level1['category'] as $id2 => $level2) {
                                 ?>
-                                    <li>
-                                        <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>">
-                                            <?=$level2['name']?>
-                                        </a>
-                                        <ul>
-                                            <?php
+        <li>
+            <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>">
+                <?=$level2['name']?>
+            </a>
+            <ul>
+                <?php
                                                 foreach ($level2['subcategory'] as $id3 => $level3) {
                                                     ?>
-                                                        <li>
-                                                            <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>&level3=<?=$id3?>">
-                                                                <?=$level3['name']?>
-                                                            </a>
-                                                        </li>
-                                                        <ul>
-                                                            <?php
-                                                                foreach ($level3['subsubcategory'] as $id4 => $level4) {
-                                                                    ?>
-                                                                        <li>
-                                                                            <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>&level3=<?=$id3?>&level4=<?=$id4?>">
-                                                                                <?=$level4['name']?>
-                                                                            </a>
-                                                                        </li>
-                                                                    <?php
-                                                                }
-                                                            ?>
-                                                        </ul>
-                                                    <?php
+                <li>
+                    <a href="shop.php?level1=<?=$id1?>&level2=<?=$id2?>&level3=<?=$id3?>">
+                        <?=$level3['name']?>
+                    </a>
+                </li>
+                <?php
                                                 }
                                             ?>
-                                        </ul>
-                                    </li>
-                                <?php
+            </ul>
+        </li>
+        <?php
                             }
                         ?>
-                    </ul>
-                </li>
-            <?php
+    </ul>
+</li>
+<?php
         }
 
         echo '</ul>';
         echo '</aside>';
 
+    }
+
+    static function printTile($row){
+        $img = $row['img'];
+        $name = $row['name'];
+        $price = $row['prices'];
+        $Id = $row['Id'];
+
+        echo "
+            <a href='shop.php?product_id=$Id'>
+                <div class='products_item'>
+                    <img src='$img'>
+                    <h2>$name</h2>
+                    <span>$price</span>
+                    <button>Go to product</button>
+                </div>
+            </a>
+        ";
+    }
+
+    static function getProducts(){
+        $connection = MainClass::dbConnectShop();
+        $sql = "SELECT * FROM product_4";
+        $result = mysqli_query($connection, $sql);
+        
+        echo '<section class="products_listening">';
+            while($row = mysqli_fetch_assoc($result)){
+                LayoutClass::printTile($row);
+            }
+        echo '</section>';
     }
 }
