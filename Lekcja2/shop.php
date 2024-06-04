@@ -18,7 +18,7 @@ MainClass::blockEntrance("login.php");
 <body>
     <header>
         <?php
-        LayoutClass::printHeader("Sklep internetowy");
+        LayoutClass::printHeader();
         ?>
     </header>
     <div class="Sklep_body">

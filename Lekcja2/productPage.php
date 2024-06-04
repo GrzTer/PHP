@@ -18,7 +18,10 @@ $connection = MainClass::dbConnect();
     ?>
 
     <main class="product_container">
-        <section class="product_image">
+        <?php
+                LayoutClass::showProduct();;
+            ?>
+        <!-- <section class="product_image">
             <img src="styles/joystick.png" />
         </section>
         <section class="product_data">
@@ -26,6 +29,7 @@ $connection = MainClass::dbConnect();
             <p>Product descript</p>
             <span>Price 12122.12 PLN</span>
             <button>Add to cart</button>
+        </section> -->
     </main>
 </body>
 

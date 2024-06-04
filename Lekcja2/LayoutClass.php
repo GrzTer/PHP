@@ -139,7 +139,7 @@ class LayoutClass {
         $Id = $row['Id'];
 
         echo "
-            <a href='shop.php?product_id=$Id'>
+            <a href='productPage.php?product_id=$Id'>
                 <div class='products_item'>
                     <img src='$img'>
                     <h2>$name</h2>
@@ -160,5 +160,30 @@ class LayoutClass {
                 LayoutClass::printTile($row);
             }
         echo '</section>';
+    }
+    
+    static function showProduct(){
+        $connection = MainClass::dbConnectShop();
+        $product_id = $_REQUEST['product_id'];
+        $sql = "SELECT * FROM product_4 WHERE Id=$product_id";
+        $result = mysqli_query($connection, $sql);
+        $row = mysqli_fetch_assoc($result);
+        
+        $img = $row['img'];
+        $name = $row['name'];
+        $desc = $row['description'];
+        $price = $row['prices'];
+        $Id = $row['Id'];
+
+        echo "
+        <section class='product_image'>
+            <img src='$img'/>
+        </section>
+        <section class='product_data'>
+        <h2>$name</h2>
+        <p>$desc</p>
+        <span>$price</span>
+        <button>Add to cart</button>
+        </section>";
     }
 }
